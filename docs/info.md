@@ -8,10 +8,12 @@ You can also include images in this folder and reference them in the markdown. E
 -->
 
 ## How it works
-Takes in instructions to load elements of Two Matrices, a bias matrix, to perform Fused Multiply & Add, along with an activation function based on an input threshold.
+
+Has two channels, one for encryption and another for decryption. Each has an enable pin separately. The output is XORed with a bit of a register variable that is generated from a LFSR that can be programmed or customised to work in 32/16/8/4 bits based on the select lines 'Sel0' and 'Sel1'
 
 ## How to test
+
 The custom instructions required to test this module will be available soon!
 
 ## External hardware
-Pico RV Core
+None
