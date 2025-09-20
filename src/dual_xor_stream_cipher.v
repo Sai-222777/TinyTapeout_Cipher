@@ -66,7 +66,7 @@ assign combined_rx_en = rx_en & cfg_en_b;
 assign a_mux = cfg_reg[2*M+1];
 assign d_en = cfg_reg[2*M]; 
 
-wire tx_lfsr_k;
+wire tx_lfsr_k, rx_lfsr_k;
 
 always @(posedge clk) begin
     if (rst) begin
