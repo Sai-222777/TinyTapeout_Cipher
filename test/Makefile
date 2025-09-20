@@ -5,7 +5,12 @@
 SIM ?= icarus
 TOPLEVEL_LANG ?= verilog
 SRC_DIR = $(PWD)/../src
-PROJECT_SOURCES = project.v
+PROJECT_SOURCES = \
+    project.v \
+    dual_xor_stream_cipher.v \
+    signature.v \
+    counter.v \
+    lfsr.v
 
 ifneq ($(GATES),yes)
 
