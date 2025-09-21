@@ -34,4 +34,9 @@ The configuration input (`cfg_i`) and enable (`cfg_en`) allow dynamic loading of
 
 ## How to test
 
-The custom instructions required to test this module will be available soon!
+A testbench is provided at `../test/tb_testing.v`.  
+
+- The primary input is assigned to the variable **`custom_input`**.  
+- The bit-width of this input can be adjusted by modifying the **`size`** variable.  
+
+Update these variables in the testbench, run the simulation.
