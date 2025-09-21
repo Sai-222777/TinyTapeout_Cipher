@@ -27,24 +27,24 @@ project:
 # This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
 pinout:
   # Inputs
-  ui[0]: "sel0"
-  ui[1]: "sel1"
-  ui[2]: "tx_p"
-  ui[3]: "rx_e"
-  ui[4]: "cfg_en"
-  ui[5]: "cfg_i"
-  ui[6]: "tx_en"
-  ui[7]: "rx_en"
+  ui[0]: "sel0 (Used for LSFR configuration)"
+  ui[1]: "sel1 (Used for LSFR configuration)"
+  ui[2]: "tx_p (Plaintext bitstream for transmission)"
+  ui[3]: "rx_e (Encrypted bitstream for reception)"
+  ui[4]: "cfg_en (Active high configuration enable for the 130-bit serial shift register)"
+  ui[5]: "cfg_i (Configuration input to the 130-bit serial shift register)"
+  ui[6]: "tx_en (Transmit channel enable)"
+  ui[7]: "rx_en (Receive channel enable)"
 
   # Outputs
-  uo[0]: "tx_e"
-  uo[1]: "rx_p"
-  uo[2]: "dgb_tx_p"
-  uo[3]: "dgb_rx_e"
-  uo[4]: "cfg_o"
-  uo[5]: "heartbeat0"
-  uo[6]: "heartbeat1"
-  uo[7]: "heartbeat2"
+  uo[0]: "tx_e (Encrypted bitstream for transmission)"
+  uo[1]: "rx_p (Decrypted bitstream for reception)"
+  uo[2]: "dgb_tx_p (Decrypted transmit bitstream, debug pin disabled by default)"
+  uo[3]: "dgb_rx_e (Encrypted receive bitstream, debug pin disabled by default)"
+  uo[4]: "cfg_o (Configuration output from the 130-bit shift register)"
+  uo[5]: "heartbeat0 (Bit [7] from the heartbeat counter)"
+  uo[6]: "heartbeat1 (Bit [8] from the heartbeat counter)"
+  uo[7]: "heartbeat2 (Bit [9] from the heartbeat counter)"
 
   # Bidirectional pins
   uio[0]: ""
