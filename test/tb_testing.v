@@ -1,6 +1,6 @@
 `timescale 1ns/1ps
 
-module tb_dual_xor_stream_cipher();
+module tb_testing();
     parameter M = 32;
     
     reg clk;
