@@ -9,7 +9,7 @@ You can also include images in this folder and reference them in the markdown. E
 
 ## Background
 
-### What is an XOR stream Cipher ? 
+### What is an XOR stream Cipher? 
 An XOR stream cipher is a type of symmetric-key encryption algorithm that encrypts data one bit or byte at a time, in a continuous stream. In a stream cipher, the encryption key is combined with a stream of pseudo-random bits or bytes to generate a sequence of cipher symbols, which are then combined with the plaintext message using the XOR (exclusive OR) operation to generate the ciphertext.
 
 Unlike block ciphers, which encrypt fixed-size blocks of plaintext at a time, stream ciphers can encrypt data of any size in a continuous stream, making them well-suited for real-time communication applications such as wireless communications or internet telephony. Stream ciphers are also often faster and more efficient than block ciphers, since they require less computation and memory.
@@ -35,6 +35,3 @@ The configuration input (`cfg_i`) and enable (`cfg_en`) allow dynamic loading of
 ## How to test
 
 The custom instructions required to test this module will be available soon!
-
-## External hardware
-None
