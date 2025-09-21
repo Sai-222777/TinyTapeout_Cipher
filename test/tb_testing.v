@@ -20,33 +20,14 @@ module tb_testing();
     wire dbg_rx_e;
     wire cfg_o;
     wire [2:0] heartbeat;
-    
+
+    integer size = 16;
     // Test vectors
-    reg [15:0] test_input = 16'b1111000011110000;
-    reg [15:0] encrypted_data;
-    reg [15:0] decrypted_data;
+    reg [size-1:0] test_input = 16'b1111000011110000;
+    reg [size-1:0] encrypted_data;
+    reg [size-1:0] decrypted_data;
     
     integer i;
-    
-    // Instantiate the DUT
-//    dual_xor_stream_cipher #(.M(M)) dut (
-//        .clk(clk),
-//        .rst(rst),
-//        .sel0(sel0),
-//        .sel1(sel1),
-//        .tx_p(tx_p),
-//        .rx_e(rx_e),
-//        .tx_e(tx_e),
-//        .rx_p(rx_p),
-//        .dbg_tx_p(dbg_tx_p),
-//        .dbg_rx_e(dbg_rx_e),
-//        .cfg_en(cfg_en),
-//        .cfg_i(cfg_i),
-//        .tx_en(tx_en),
-//        .rx_en(rx_en),
-//        .cfg_o(cfg_o),
-//        .heartbeat(heartbeat)
-//    );
     
     wire [7:0] ui_in, uo_out;
     
@@ -68,8 +49,8 @@ module tb_testing();
     // Initialize signals
     initial begin
         
-        $dumpfile("tb_dual_xor_stream_cipher.vcd");
-        $dumpvars(0, tb_dual_xor_stream_cipher);
+        $dumpfile("tb_testing.vcd");
+        $dumpvars(0, tb_testing);
     
         clk = 0;
         rst = 1;
@@ -106,7 +87,7 @@ module tb_testing();
         // Encrypt the test input
         $display("Encrypting...");
         encrypted_data = 0;
-        for (i = 0; i < 16; i = i + 1) begin
+        for (i = 0; i < size; i = i + 1) begin
             tx_p = test_input[i];
             tx_en = 1;
             #10;
@@ -127,7 +108,7 @@ module tb_testing();
         // Decrypt the encrypted data
         $display("Decrypting...");
         decrypted_data = 0;
-        for (i = 0; i < 16; i = i + 1) begin
+        for (i = 0; i < size; i = i + 1) begin
             rx_e = encrypted_data[i];
 //            rx_e = test_input[i];
             rx_en = 1;
@@ -154,16 +135,5 @@ module tb_testing();
         #20;
     end
     endtask
-    
-    
-    // Monitor signals
-//    always @(posedge clk) begin
-//        if (tx_en) begin
-//            $display("TX: P=%b, E=%b, LFSR_k=%b", tx_p, tx_e, dut.tx_lfsr_k);
-//        end
-//        if (rx_en) begin
-//            $display("RX: E=%b, P=%b, LFSR_k=%b", rx_e, rx_p, dut.tx_lfsr_k);
-//        end
-//    end
     
 endmodule
