@@ -1,6 +1,6 @@
 # Tiny Tapeout project information
 project:
-  title:        "XOR Stream Cipher"      # Project title
+  title:        "LFSR Driven Cryptography"      # Project title
   author:       "Sai Surya"      # Your name
   discord:      ""      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
   description:  "A two-channel XOR stream cipher with fully programmable 32/16/8/4-bit Galois LFSRs"      # One line description of what your project does
